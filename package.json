@@ -1,0 +1,61 @@
+{
+  "name": "@disha-148/test-package-2",
+  "version": "1.0.0",
+  "description": "second test package",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "scripts": {
+    "debug": "ts-node src/index.ts export --server sample.instana.io --token **TOKEN** --include annotation='SHARED'",
+    "build": "tsc",
+    "pkg": "pkg . --output dist/stanctl-integration"
+  },
+  "bin": {
+    "stanctl-integration": "./dist/index.js"
+  },
+  "pkg": {
+    "assets": [
+      "dist/**/*.js",
+      "node_modules/**/*"
+    ],
+    "targets": [
+      "node16-macos",
+      "node16-linux",
+      "node16-win"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disha-148/test-package.git"
+  },
+  "keywords": [
+    "cli",
+    "observability",
+    "code",
+    "integration",
+    "package"
+  ],
+  "author": "disha-148",
+  "bugs": {
+    "url": "https://github.com/disha-148/test-package/issues"
+  },
+  "homepage": "https://github.com/disha-148/test-package#readme",
+  "dependencies": {
+    "@inquirer/prompts": "^5.0.7",
+    "axios": "^1.7.2",
+    "glob": "^10.4.1",
+    "handlebars": "^4.7.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "winston": "^3.13.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.14.2",
+    "@types/winston": "^2.4.4",
+    "@types/yargs": "^17.0.32"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
